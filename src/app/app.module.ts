@@ -1,18 +1,27 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
+import { ProfileService } from './services/profile.service';
+
 import { AppComponent } from './app.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { LandingComponent } from './components/profile/landing/landing.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
